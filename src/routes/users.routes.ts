@@ -9,6 +9,7 @@ class UsersRoutes {
         this.router.get('/show', usersController.show);
         
         this.router.get('/', usersController.index);
+        this.router.get('/:id', usersController.showById);
         this.router.post('/', usersController.create);
         this.router.delete('/:id', usersController.delete);
         this.router.put('/:id', usersController.update);

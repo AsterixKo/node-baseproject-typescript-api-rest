@@ -69,6 +69,20 @@ class UsersController {
         
     }
 
+    public async showById(req: Request, res: Response){
+        console.log(req.params.id);
+
+        try {
+            
+            const user = await User.findByPk(req.params.id, { raw: true});
+
+            res.send(user);
+
+        } catch (error){
+            res.json(error);
+        }
+    }
+
     public async create (req: Request, res: Response){
 
         try{
