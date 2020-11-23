@@ -5,6 +5,7 @@ export class Book extends Model {
     public id!: number;
     public title!: string;
     public description!: string;
+    public authorId!: number;
     public createdAt!: Date;
     public updatedAt!: Date;
 }
@@ -23,6 +24,10 @@ Book.init({
     description: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    authorId: {
+        type: DataTypes.INTEGER.UNSIGNED,
+        allowNull: true
     },
     createdAt: {
         type: DataTypes.DATE,
